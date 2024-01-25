@@ -9,7 +9,7 @@ function App() {
   const [response, setResponse] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost/api").then((res) => res.json()).then((res) => {
+    fetch("http://localhost:3500/api").then((res) => res.json()).then((res) => {
       console.log(res);
       setResponse(res.msg);
     }).catch((err) => {
