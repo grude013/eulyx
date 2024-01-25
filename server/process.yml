@@ -1,0 +1,7 @@
+apps:
+  - script: './index.js'
+    exec_mode: 'fork'
+    name: 'worker-main'
+    env:
+      PORT: 3500
+      NODE_ENV: production
