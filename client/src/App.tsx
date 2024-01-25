@@ -12,6 +12,7 @@ function App() {
     fetch("http://localhost:3500").then((res) => res.text()).then((res) => {
       setResponse(res);
     }).catch((err) => {
+      console.log(err);
       setResponse("fetch failed");
     })
   });
