@@ -2,15 +2,19 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
 
+  const [response, setResponse] = useState("");
+
   useEffect(() => {
-    fetch("http://3.15.200.117:3500").then((res) => res.json()).then((res) => {
+    fetch("http://localhost/api").then((res) => res.json()).then((res) => {
       console.log(res);
+      setResponse(res.msg);
     }).catch((err) => {
       console.log(err);
+      setResponse("Error");
     })
   });
 
@@ -29,6 +33,7 @@ function App() {
         >
           Learn React
         </a>
+        {response}
       </header>
     </div>
   );
