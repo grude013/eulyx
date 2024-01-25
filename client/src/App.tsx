@@ -9,6 +9,9 @@ function App() {
   const [response, setResponse] = useState("");
 
   useEffect(() => {
+    console.log(location.hostname);
+    console.log(location.port);
+    console.log(location.host);
     fetch("http://localhost:3500/api").then((res) => res.json()).then((res) => {
       console.log(res);
       setResponse(res.msg);
