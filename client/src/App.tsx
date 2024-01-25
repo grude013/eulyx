@@ -2,18 +2,15 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 function App() {
 
-  const [response, setResponse] = useState("");
-
   useEffect(() => {
-    fetch("http://localhost:3500").then((res) => res.text()).then((res) => {
-      setResponse(res);
+    fetch("http://localhost:3500").then((res) => res.json()).then((res) => {
+      console.log(res);
     }).catch((err) => {
       console.log(err);
-      setResponse("fetch failed");
     })
   });
 
@@ -32,7 +29,6 @@ function App() {
         >
           Learn React
         </a>
-        {response}
       </header>
     </div>
   );
