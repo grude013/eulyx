@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 function App() {
 
   useEffect(() => {
-    fetch("http://localhost:3500").then((res) => res.json()).then((res) => {
+    fetch("http://3.15.200.117:3500").then((res) => res.json()).then((res) => {
       console.log(res);
     }).catch((err) => {
       console.log(err);
